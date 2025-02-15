@@ -1,0 +1,59 @@
+@import "./fonts.css";
+
+:root {
+  --color-dark: #161616;
+  --color-dark-gray: #595959;
+  --color-light-gray: #9C9C9C;
+  --color-lighter-gray: #DADADA;
+  --color-light-white: #F4F4F4;
+  --color-white: #FDFDFD;
+  --color-accent: #22A0BC;
+
+  --font-base: "Manrope", sans-serif;
+  --padding-x: 20px;
+  --container-width: 1160px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: transparent;
+  border: 0;
+}
+
+input {
+  border: 0;
+}
+
+.container {
+  max-width: calc(var(--container-width) + (var(--padding-x) * 2));
+  margin-inline: auto;
+  padding-inline: var(--padding-x);
+}
+
+section {
+  background-color: var(--color-light-white);
+  padding-top: 40px;
+}

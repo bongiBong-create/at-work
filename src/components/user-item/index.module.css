@@ -1,0 +1,33 @@
+.item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 24px;
+  font-family: var(--font-base);
+}
+
+.info {
+  width: 150px;
+}
+
+.username {
+  color: var(--color-accent);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.company {
+  color: var(--color-dark-gray);
+  font-weight: 500;
+  margin-bottom: 48px;
+  height: 44px;
+}
+
+.address {
+  color: var(--color-light-gray);
+  font-size: 14px;
+}
