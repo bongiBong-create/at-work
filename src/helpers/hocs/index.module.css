@@ -33,6 +33,19 @@
   background-color: var(--color-lighter-gray);
 }
 
+@media (width < 800px) {
+  .loaderContainer {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+    gap: 20px;
+  }
+}
+
+@media (width < 455px) {
+  .loaderContainer {
+    grid-template-columns: repeat(2, 160px);
+  }
+}
+
 @keyframes pulse {
   0% {
     opacity: 0.5;
