@@ -8,6 +8,7 @@
 
 .dropdown_button {
   padding-block: 8px;
+  color: var(--color-dark);
 }
 
 .submit {
