@@ -1,12 +1,15 @@
 import { Icon } from "../UI/icon";
 import avatar from "../../app/images/avatarka.jpg";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_inner} container`}>
-        <Icon name="logo" />
+        <Link to={`list`}>
+          <Icon name="logo" />
+        </Link>
         <div className={styles.user}>
           <div className={styles.user_actions}>
             <Icon name="favorite" />

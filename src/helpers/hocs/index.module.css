@@ -1,4 +1,4 @@
-.list {
+.loaderContainer {
   display: grid;
   justify-content: start;
   grid-template-columns: repeat(auto-fit, minmax(160px, 360px));
@@ -6,7 +6,15 @@
   padding-bottom: 40px;
 }
 
-.title {
+.loader {
+  width: 360px;
+  height: 172px;
+  background-color: #ccc;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loaderTitle {
   font-family: var(--font-base);
   font-weight: 600;
   font-size: 24px;
@@ -15,7 +23,7 @@
   margin-bottom: 44px;
 }
 
-.title::before {
+.loaderTitle::before {
   position: absolute;
   content: "";
   top: 53px;
@@ -25,21 +33,16 @@
   background-color: var(--color-lighter-gray);
 }
 
-@media (width < 1200px) {
-  .active_list {
-    justify-content: center;
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
   }
-}
 
-@media (width < 800px) {
-  .list {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
-    gap: 20px;
+  50% {
+    opacity: 1;
   }
-}
 
-@media (width < 455px) {
-  .list {
-    grid-template-columns: repeat(2, 160px);
+  100% {
+    opacity: 0.5;
   }
 }

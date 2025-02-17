@@ -24,14 +24,32 @@ export const getUsers = createAsyncThunk(
 const userSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    removeUser(state, { payload }) {
+      state.users = state.users.filter((user) => user.id !== payload);
+    },
+    addUser(state, { payload }) {
+      state.users.push({ ...payload, isArchive: false });
+    },
+    updateActiveUser(state, { payload }) {
+      state.users = state.users.map((user) => {
+        if (user.id == payload.id) {
+          return {
+            ...user,
+            ...payload.activeProfile,
+          };
+        }
+        return user;
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getUsers.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(getUsers.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.users = payload;
+      state.users = payload.map((user) => ({ ...user, isArchive: false }));
     });
     builder.addCase(getUsers.rejected, (state, { payload }) => {
       state.isLoading = false;
@@ -40,4 +58,5 @@ const userSlice = createSlice({
   },
 });
 
+export const { removeUser, addUser, updateActiveUser } = userSlice.actions;
 export const userReducer = userSlice.reducer;

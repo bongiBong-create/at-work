@@ -1,21 +1,52 @@
-import { Icon } from "../UI/icon";
+import { useRef, useState } from "react";
+
+import { Dropdown } from "../dropdown";
+import { UserInfo } from "./user-info";
 
 import avatar from "../../app/images/avatar.jpg";
 
 import styles from "./index.module.css";
 
-export const UserItem = ({ username, address, company }) => {
+export const UserItem = ({
+  id,
+  username,
+  address,
+  company,
+  users,
+  isArchive,
+}) => {
+  const [isActive, setIsActive] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const user = users.find((user) => user.id === id);
+
+  const changeIsActive = () => {
+    setIsActive(!isActive);
+  };
+
+  const handleClickOutside = () => {
+    if (!dropdownRef.current) {
+      setIsActive(!isActive);
+    }
+  };
+
   return (
-    <li className={styles.item}>
-      <img src={avatar} alt="avatar" />
-      <div className={styles.info}>
-        <h3 className={styles.username}>{username}</h3>
-        <h4 className={styles.company}>{company.name}</h4>
-        <h5 className={styles.address}>{address.city}</h5>
+    <li className={styles.item} onClick={handleClickOutside}>
+      <div className={styles.img}>
+        <img
+          className={isArchive ? styles.archive : ""}
+          src={avatar}
+          alt="avatar"
+        />
       </div>
-      <button>
-        <Icon name="actions" />
-      </button>
+      <UserInfo
+        handler={changeIsActive}
+        className={isArchive ? styles.archive : ""}
+        username={username}
+        address={address}
+        company={company}
+      />
+      <Dropdown ref={dropdownRef} id={id} isActive={isActive} user={user} />
     </li>
   );
 };

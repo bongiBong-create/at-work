@@ -1,0 +1,21 @@
+.input {
+  background-color: var(--color-white);
+  border-radius: 50px;
+  border: 2px solid var(--color-light-white);
+  padding: 8px;
+  font-size: 16px;
+  font-family: var(--font-base);
+  font-weight: 500;
+  width: 100%;
+  transition: all .3s;
+  cursor: pointer;
+  color: var(--color-dark-gray);
+}
+
+.input:hover {
+  color: var(--color-accent);
+}
+
+.input:active {
+  color: var(--color-dark);
+}

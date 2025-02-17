@@ -1,0 +1,47 @@
+.button {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.86px;
+  justify-content: center;
+}
+
+.dropdown_button {
+  padding-block: 8px;
+}
+
+.submit {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  font-family: var(--font-base);
+  max-width: 170px;
+  width: 100%;
+  padding-block: 12px;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.submit:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+}
+
+.dropdown_button:hover {
+  color: var(--color-accent);
+}
+
+.actions_button {
+  width: 24px;
+}
+
+.modal_button {
+  width: 24px;
+  align-self: flex-end;
+  margin-bottom: 24px;
+}
+
+@media (width < 800px) {
+  .submit {
+    max-width: none;
+  }
+}

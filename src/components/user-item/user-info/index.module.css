@@ -1,0 +1,46 @@
+.info {
+  width: 100%;
+}
+
+.username {
+  color: var(--color-accent);
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 102px;
+}
+
+.company {
+  color: var(--color-dark-gray);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+  margin-bottom: 48px;
+}
+
+.address {
+  color: var(--color-light-gray);
+  font-size: 14px;
+}
+
+.archive {
+  color: var(--color-dark-gray);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+@media (width < 800px) {
+  .company {
+    margin-bottom: 12px;
+  }
+}

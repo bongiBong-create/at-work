@@ -2,6 +2,7 @@
   height: 56px;
   display: flex;
   align-items: center;
+  background-color: var(--color-white);
 }
 
 .header_inner {

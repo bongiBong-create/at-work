@@ -1,0 +1,8 @@
+.actions {
+  fill: var(--color-dark);
+  transition: all .3s;
+}
+
+.actions:hover {
+  fill: var(--color-accent);
+}
